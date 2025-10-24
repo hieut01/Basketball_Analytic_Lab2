@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Future of Basketball Analytics</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .counter-section {
+      text-align: center;
+      margin-top: 40px;
+      background-color: #f7f7f7;
+      padding: 30px 0;
+      border-top: 2px solid #ddd;
+    }
+
+    .counter-container {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .counter-box {
+      text-align: center;
+      background-color: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      width: 200px;
+    }
+
+    .counter {
+      font-size: 2.5em;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .counter-label {
+      font-size: 1.1em;
+      color: #555;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topnav" id="myTopnav">
+    <a href="index.html">Home</a>
+    <a href="section1.html">Early Days</a>
+    <a href="section2.html">Advanced Metrics</a>
+    <a class="active" href="section3.html">Future</a>
+    <a href="see_also.html">See Also</a>
+    <a href="references.html">References</a>
+    <a href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a>
+  </div>
+
+  <div class="content">
+    <h2>The Future of Basketball Analytics</h2>
+    <p>The future of basketball analytics uses things like <strong>AI</strong>, <strong>machine learning</strong>, and <strong>wearable tech</strong>. Teams can now:</p>
+    <ul>
+      <li>Track injury risks</li>
+      <li>Adjust training schedules</li>
+      <li>Look at live game data right on the sidelines</li>
+    </ul>
+    <p>Coaches can use data to choose the best lineups, and players can use sensors to see when they’re getting too tired. Analytics isn’t just a small part of the game anymore, it’s a big part of how basketball works today.</p>
+  </div>
+
+  <div class="counter-section">
+    <h3>How Analytics is Growing</h3>
+    <div class="counter-container">
+      <div class="counter-box">
+        <div class="counter" data-target="85">0</div>
+        <div class="counter-label">Teams Using AI (%)</div>
+      </div>
+      <div class="counter-box">
+        <div class="counter" data-target="92">0</div>
+        <div class="counter-label">Machine Learning Adoption (%)</div>
+      </div>
+      <div class="counter-box">
+        <div class="counter" data-target="76">0</div>
+        <div class="counter-label">Wearable Tech Tracking (%)</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      counter.innerText = '0';
+      const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+        const increment = target / 100;
+        if (current < target) {
+          counter.innerText = `${Math.ceil(current + increment)}`;
+          setTimeout(updateCounter, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCounter();
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
